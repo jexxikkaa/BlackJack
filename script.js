@@ -38,10 +38,12 @@ var main = function () {
         computerHand = computerHand.concat(cdrawnCards);
         console.log("Computer's hand:", getHandInfo(computerHand)); 
         }
+        console.log (cardDeck);
       return `Both players cards are drawn, your cards are ${getHandInfo (playerHand)}! Press "card deck" if you wish to draw another card. Otherwise press "done" to compare hands.`
     }
     else {
       console.log("Computer's hand:", getHandInfo(computerHand));
+      console.log (cardDeck);
       return `Both players cards are drawn, your cards are ${getHandInfo (playerHand)}! Press "card deck" if you wish to draw another card. Otherwise press "done" to compare hands.`
 
     }
@@ -93,6 +95,7 @@ function playerDraws (counterNumber){
 
   for (var i = 0; i < counterNumber; i++) {
     PdrawnCards.push (cardDeck.pop ());
+    console.log (cardDeck);
     }
   return PdrawnCards
 }
@@ -102,6 +105,7 @@ function computerDraws (counterNumber){
 
   for (var i = 0; i < counterNumber; i++) {
     CdrawnCards.push (cardDeck.pop ());
+    console.log (cardDeck);
     }
   return CdrawnCards
 }
@@ -140,6 +144,7 @@ function evaluateHands () {
       var results =  `It's a tie. Both players busted. Your cards are ${getHandInfo(playerHand)} and computer cards are ${getHandInfo(computerHand)}`;
       playerHand = [];
       computerHand = [];
+      cardDeck = [];
       return results;
     }
     else {
@@ -147,6 +152,7 @@ function evaluateHands () {
       var results =  `You lost. Your cards are ${getHandInfo(playerHand)} and computer cards are ${getHandInfo(computerHand)}`;
       playerHand = [];
       computerHand = [];
+      cardDeck = [];
       return results;
     }
   } 
@@ -154,6 +160,7 @@ function evaluateHands () {
     var results = `You won. Your cards are ${getHandInfo(playerHand)} and computer cards are ${getHandInfo(computerHand)}`
     playerHand = [];
     computerHand = [];
+    cardDeck = [];
     return results;
   }
 
@@ -161,6 +168,7 @@ function evaluateHands () {
     var results = `You won. Your cards are ${getHandInfo(playerHand)} and computer cards are ${getHandInfo(computerHand)}`;
     playerHand = [];
     computerHand = [];
+    cardDeck = [];
     return results;
   } 
   
@@ -168,12 +176,14 @@ function evaluateHands () {
     var results = `You lost. Your cards are ${getHandInfo(playerHand)} and computer cards are ${getHandInfo(computerHand)}`;
     playerHand = [];
     computerHand = [];
+    cardDeck = [];
     return results;
   }
   else if (computerSum == playerSum){
     var results = `It's a tie. Your cards are ${getHandInfo(playerHand)} and computer cards are ${getHandInfo(computerHand)}`;
     playerHand = [];
     computerHand = [];
+     cardDeck = [];
     return results;
 
   }
@@ -194,4 +204,5 @@ function getHandInfo(hand) {
 
   return handInfo.join(", ");
 }
+
 
