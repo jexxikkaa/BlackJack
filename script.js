@@ -140,6 +140,7 @@ function evaluateHands () {
       var results =  `It's a tie. Both players busted. Your cards are ${getHandInfo(playerHand)} and computer cards are ${getHandInfo(computerHand)}`;
       playerHand = [];
       computerHand = [];
+      cardDeck = [];
       return results;
     }
     else {
@@ -147,6 +148,7 @@ function evaluateHands () {
       var results =  `You lost. Your cards are ${getHandInfo(playerHand)} and computer cards are ${getHandInfo(computerHand)}`;
       playerHand = [];
       computerHand = [];
+      cardDeck = [];
       return results;
     }
   } 
@@ -154,6 +156,7 @@ function evaluateHands () {
     var results = `You won. Your cards are ${getHandInfo(playerHand)} and computer cards are ${getHandInfo(computerHand)}`
     playerHand = [];
     computerHand = [];
+    cardDeck = [];
     return results;
   }
 
@@ -161,6 +164,7 @@ function evaluateHands () {
     var results = `You won. Your cards are ${getHandInfo(playerHand)} and computer cards are ${getHandInfo(computerHand)}`;
     playerHand = [];
     computerHand = [];
+    cardDeck = [];
     return results;
   } 
   
@@ -168,12 +172,14 @@ function evaluateHands () {
     var results = `You lost. Your cards are ${getHandInfo(playerHand)} and computer cards are ${getHandInfo(computerHand)}`;
     playerHand = [];
     computerHand = [];
+    cardDeck = [];
     return results;
   }
   else if (computerSum == playerSum){
     var results = `It's a tie. Your cards are ${getHandInfo(playerHand)} and computer cards are ${getHandInfo(computerHand)}`;
     playerHand = [];
     computerHand = [];
+    cardDeck = [];
     return results;
 
   }
