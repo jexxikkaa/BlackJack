@@ -87,12 +87,6 @@ function shuffleDeck() {
   }
 }
 
-var getRandomIndex = function() {
-
-  var randomIndex = randomWords [Math.floor(Math.random() * randomWords.length)];
-  return randomIndex;
-}
-
 
 function playerDraws (counterNumber){
   let PdrawnCards = []
