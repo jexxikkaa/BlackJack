@@ -20,7 +20,7 @@ function displayResult(result) {
 
 
 var main = function () {
-  if (cardDeck.length == 0) {
+  if (cardDeck.length == 0 && (playerHand.length == 0) && (computerHand.length == 0)) {
     cardDeck = makeDeck ();
     shuffleDeck (cardDeck);
     console.log (cardDeck);
@@ -48,12 +48,17 @@ var main = function () {
 
     }
   }
-  else if ((cardDeck !== 0) && (playerHand.length !== 0)) {
+  else if ((cardDeck.length !==0) && (cardDeck !== 0) && (playerHand.length !== 0)) {
 
       let pdrawnCards = playerDraws(1); 
       playerHand = playerHand.concat(pdrawnCards);
     
     return `Your current cards are ${getHandInfo (playerHand)}, if you are happy with your hand, please press "done" to compare hands. Otherwise, please press "card deck" again to draw another card.`
+  }
+
+  else if ((cardDeck.length == 0) && (cardDeck !== 0) && (playerHand.length !== 0)) {
+    return `Wtf you doing? There aint any more cards in the deck.`
+
   }
 
 
@@ -204,5 +209,6 @@ function getHandInfo(hand) {
 
   return handInfo.join(", ");
 }
+
 
 
