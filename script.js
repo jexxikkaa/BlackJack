@@ -131,8 +131,8 @@ function calculateHandSum(hand) {
 
 function evaluateHands () {
 
-  const playerSum = calculateHandSum(playerHand);
-  const computerSum = calculateHandSum(computerHand);
+  let playerSum = calculateHandSum(playerHand);
+  let computerSum = calculateHandSum(computerHand);
  if ((playerHand.length !== 0) && (computerHand.length !== 0)){
 
   if (playerSum > 21) {
@@ -185,10 +185,10 @@ else {
 }
 
 function getHandInfo(hand) {
-  const handInfo = [];
+  let handInfo = [];
 
   for (const card of hand) {
-    const cardInfo = `${card.name} of ${card.suit}`;
+    let cardInfo = `${card.name} of ${card.suit}`;
     handInfo.push(cardInfo);
   }
 
